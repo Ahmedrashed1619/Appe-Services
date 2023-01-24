@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Appe-Services/static/css/main.78a1ce0a.css",
+    "main.js": "/Appe-Services/static/js/main.f7700ed5.js",
+    "static/js/787.11152572.chunk.js": "/Appe-Services/static/js/787.11152572.chunk.js",
+    "static/media/fa-solid-900.ttf": "/Appe-Services/static/media/fa-solid-900.b1a653db79258eeccc5d.ttf",
+    "static/media/fa-brands-400.ttf": "/Appe-Services/static/media/fa-brands-400.450a5c898f0b184b968b.ttf",
+    "static/media/fa-solid-900.woff2": "/Appe-Services/static/media/fa-solid-900.41c0f706d8ce93933771.woff2",
+    "static/media/fa-brands-400.woff2": "/Appe-Services/static/media/fa-brands-400.3ac6859b28be946745f9.woff2",
+    "static/media/fa-regular-400.ttf": "/Appe-Services/static/media/fa-regular-400.3cd9fb8fcec4ad0f99d4.ttf",
+    "static/media/fa-regular-400.woff2": "/Appe-Services/static/media/fa-regular-400.1f3772178d9e5bed38a6.woff2",
+    "static/media/fa-v4compatibility.ttf": "/Appe-Services/static/media/fa-v4compatibility.e314b618134d5be20996.ttf",
+    "static/media/fa-v4compatibility.woff2": "/Appe-Services/static/media/fa-v4compatibility.4ee7f902d88f819e251c.woff2",
+    "static/media/slick.svg": "/Appe-Services/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/Appe-Services/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/Appe-Services/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/Appe-Services/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/Appe-Services/index.html",
+    "main.78a1ce0a.css.map": "/Appe-Services/static/css/main.78a1ce0a.css.map",
+    "main.f7700ed5.js.map": "/Appe-Services/static/js/main.f7700ed5.js.map",
+    "787.11152572.chunk.js.map": "/Appe-Services/static/js/787.11152572.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.78a1ce0a.css",
+    "static/js/main.f7700ed5.js"
+  ]
+}
