@@ -109,7 +109,7 @@ export default function Navbar() {
             class: 'jobs',
             nameEn: 'Jobs',
             nameAr: 'الوظائـف'
-        },
+        }
     ]
 
 

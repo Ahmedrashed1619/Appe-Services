@@ -2,6 +2,9 @@
   "homepage": "https://ahmedrashed1619.github.io/Appe-Services/",
   "name": "appe-services",
   "version": "0.1.0",
+  "engines": {
+    "node": "16.18.1"
+  },
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.2.1",

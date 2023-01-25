@@ -32,6 +32,7 @@ export default function App() {
       { path: '/' , element: <Layout /> , children: [
 
         { index: true , element: <Home /> },
+        { path: 'home' , element: <Home /> },
         { path: 'about' , element: <About /> },
         { path: 'services' , element: <Services /> },
         { path: 'services/:id' , element: <ServiceDetails /> },
@@ -49,7 +50,7 @@ export default function App() {
         { path: 'privacy' , element: <Privacy /> },
         { path: 'terms' , element: <Terms /> },
         { path: '*' , element: <Notfound /> }
-        
+
       ]}
     ])
 
