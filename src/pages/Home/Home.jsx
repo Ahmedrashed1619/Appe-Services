@@ -35,6 +35,9 @@ import blog2 from '../../images/Home/Image here (9).png';
 import blog3 from '../../images/Home/Image here (10).png';
 import blog4 from '../../images/Home/Image here (11).png';
 
+import Location from '../../componants/Location/Location';
+
+
 
 export default function Home() {
 
@@ -43,17 +46,17 @@ export default function Home() {
 
   useEffect(() => {
     $('.home').addClass('active');
-
     return () => {
       $('.home').removeClass('active');
     }
   }, [])
 
+  useEffect(() => {
+    $('html , body').animate({ scrollTop: 0 }, 200);
+  }, []);
 
   useEffect(() => {
-
     new WOW.WOW().init();
-
   }, []);
 
 
@@ -215,6 +218,14 @@ export default function Home() {
   ]
 
 
+  const blogsImgs =[
+    {img: blog1},
+    {img: blog2},
+    {img: blog3},
+    {img: blog4}
+  ]
+
+
   const clients = {
     // items: 6,
     responsiveClass: true,
@@ -305,27 +316,29 @@ export default function Home() {
       <section className="pb-5" dir={isEng ? 'ltr' : 'rtl'}>
         <div className="container">
           <div className="row gy-4 d-flex justify-content-center align-items-center">
-            <div className="col-11">
+            <div className="col-10">
               <div className="main-title text-center pt-3 mb-4 position-relative wow fadeInDownBig" data-wow-duration="1s" data-wow-delay="0.5s">
                 <img src={vectorTop} className={`vector position-absolute wow fadeIn top-0 ${isEng ? 'start-vector' : 'end-vector'} translate-middle-x`} data-wow-duration="1s" data-wow-delay="1.5s" style={{height: '100px'}} alt="vector" />
                 <h2 className="fw-bold fs-1 mb-2 position-relative">{isEng ? 'Services' : 'الخدمــات'}</h2>
-                <p className="mx-auto mb-0 position-relative">{isEng ? 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt, quaerat?' : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt, quaerat?'}</p>
+                <p className="mx-auto mb-0 position-relative" style={{color: '#656565'}}>{isEng ? 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt, quaerat?' : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt, quaerat?'}</p>
               </div>
             </div>
 
-            {servicesImgs.map((service , i) => (
-              <Link key={i} to='../services/1' className="col-lg-3 col-md-6 col-11">
-                <div className={`service-item rounded-4 position-relative wow ${state[i]}`} data-wow-duration="1.5s" data-wow-delay={`${del[i]}`}>
-                  <img src={service.img} className='w-100 rounded-4' alt="service" />
-                  <div className="layer-title rounded-4 position-absolute top-0 start-0 end-0 bottom-0 d-flex justify-content-center align-items-end" style={{backgroundColor: '#00000075'}}>
-                    <h4 className='text-white fw-bold mb-4'>{isEng ? service.titleEn : service.titleAr}</h4>
-                  </div>
-                  <div className="layer-caption rounded-4 position-absolute d-flex justify-content-center align-items-center" style={{backgroundColor: '#00000095'}}>
-                    <p className='text-white mb-4 p-3'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic soluta quibusdam, neque maxime fuga dolorum fugit, sapiente enim harum perferendis aspernatur esse molestias veritatis! Dolorum voluptatum error omnis, deserunt minus sit in harum veritatis atque tempore iure expedita sint molestiae.</p>
-                  </div>
-                </div>
-              </Link>
-            ))}
+            <div className="row gy-4 d-flex justify-content-center justify-content-lg-start align-items-center">
+                {servicesImgs.map((service , i) => (
+                  <Link key={i} to='../services/1' className="col-lg-3 col-md-6 col-11">
+                    <div className={`service-item rounded-4 position-relative wow ${state[i]}`} data-wow-duration="1.5s" data-wow-delay={`${del[i]}`}>
+                      <img src={service.img} className='w-100 rounded-4' alt="service" />
+                      <div className="layer-title rounded-4 position-absolute top-0 start-0 end-0 bottom-0 d-flex justify-content-center align-items-end" style={{backgroundColor: '#00000075'}}>
+                        <h4 className='text-white fw-bold mb-4'>{isEng ? service.titleEn : service.titleAr}</h4>
+                      </div>
+                      <div className="layer-caption rounded-4 position-absolute d-flex justify-content-center align-items-center" style={{backgroundColor: '#00000095'}}>
+                        <p className='text-white mb-4 p-3'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic soluta quibusdam, neque maxime fuga dolorum fugit, sapiente enim harum perferendis aspernatur esse molestias veritatis! Dolorum voluptatum error omnis, deserunt minus sit in harum veritatis atque tempore iure expedita sint molestiae.</p>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+            </div>
             
             <div className="buttons text-center mt-5 wow fadeInUpBig">
               <Link to="../services" className="btn second-btn px-5" data-wow-duration="1s" data-wow-delay="0.5s">{isEng ? 'All Services' : 'المزيـــد'}</Link>
@@ -338,27 +351,29 @@ export default function Home() {
       <section className="pb-5" dir={isEng ? 'ltr' : 'rtl'}>
         <div className="container">
           <div className="row gy-4 d-flex justify-content-center align-items-center">
-            <div className="col-11">
+            <div className="col-10">
               <div className="main-title text-center pt-3 mb-4 position-relative wow fadeInDownBig" data-wow-duration="1s" data-wow-delay="0.5s">
                 <img src={vectorTop} className={`vector position-absolute wow fadeIn top-0 ${isEng ? 'start-vector' : 'end-vector'} translate-middle-x`} data-wow-duration="1s" data-wow-delay="1.5s" style={{height: '100px'}} alt="vector" />
                 <h2 className="fw-bold fs-1 mb-2 position-relative">{isEng ? 'Portfolio' : 'معرض الأعمال'}</h2>
-                <p className="mx-auto mb-0 position-relative">{isEng ? 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt, quaerat?' : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt, quaerat?'}</p>
+                <p className="mx-auto mb-0 position-relative" style={{color: '#656565'}}>{isEng ? 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt, quaerat?' : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt, quaerat?'}</p>
               </div>
             </div>
-
-            {portfolioImgs.map((port , i) => (
-              <Link key={i} to='../portfolio/1' className="col-lg-4 col-md-6 col-11">
-                <div className={`port-item rounded-4 position-relative wow ${state[i]}`} data-wow-duration="1.5s" data-wow-delay={`${del[i]}`}>
-                  <img src={port.img} className='w-100 rounded-4' alt="port" />
-                  <div className="layer-title rounded-4 position-absolute top-0 start-0 end-0 bottom-0 d-flex justify-content-center align-items-end" style={{backgroundColor: '#00000075'}}>
-                    <h4 className='text-white fw-bold mb-4'>{isEng ? port.titleEn : port.titleAr}</h4>
-                  </div>
-                  <div className="layer-caption rounded-4 position-absolute d-flex justify-content-center align-items-center" style={{backgroundColor: '#00000095'}}>
-                    <p className='text-white mb-4 p-3'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic soluta quibusdam, neque maxime fuga dolorum fugit, sapiente enim harum perferendis aspernatur esse molestias veritatis! Dolorum voluptatum error omnis, deserunt minus sit in harum veritatis atque tempore iure expedita sint molestiae.</p>
-                  </div>
-                </div>
-              </Link>
-            ))}
+            
+            <div className="row gy d-flex justify-content-center justify-content-lg-start align-items-center">
+                {portfolioImgs.map((port , i) => (
+                    <Link key={i} to='../portfolio/1' className="col-lg-4 col-md-6 col-11">
+                      <div className={`port-item rounded-4 position-relative wow ${state[i]}`} data-wow-duration="1.5s" data-wow-delay={`${del[i]}`}>
+                        <img src={port.img} className='w-100 rounded-4' alt="port" />
+                        <div className="layer-title rounded-4 position-absolute top-0 start-0 end-0 bottom-0 d-flex justify-content-center align-items-end" style={{backgroundColor: '#00000075'}}>
+                          <h4 className='text-white fw-bold mb-4'>{isEng ? port.titleEn : port.titleAr}</h4>
+                        </div>
+                        <div className="layer-caption rounded-4 position-absolute d-flex justify-content-center align-items-center" style={{backgroundColor: '#00000095'}}>
+                          <p className='text-white mb-4 p-3'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic soluta quibusdam, neque maxime fuga dolorum fugit, sapiente enim harum perferendis aspernatur esse molestias veritatis! Dolorum voluptatum error omnis, deserunt minus sit in harum veritatis atque tempore iure expedita sint molestiae.</p>
+                        </div>
+                      </div>
+                    </Link>
+                ))}
+            </div>
             
             <div className="buttons text-center mt-5 wow fadeInUpBig">
               <Link to="../portfolio" className="btn second-btn px-5" data-wow-duration="1s" data-wow-delay="0.5s">{isEng ? 'View All Projects' : 'المزيـــد'}</Link>
@@ -393,44 +408,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials-home */}
+      <section className="py-5" dir={isEng ? 'ltr' : 'rtl'}>
+        <div className="container-fluid">
+          <div className="row gy-4 d-flex justify-content-center align-items-center">
+            <div className="col-10">
+              <div className="main-title text-center pt-3 mb-4 position-relative wow fadeInDownBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src={vectorTop} className={`vector position-absolute wow fadeIn top-0 ${isEng ? 'start-vector' : 'end-vector'} translate-middle-x`} data-wow-duration="1s" data-wow-delay="1.5s" style={{height: '100px'}} alt="vector" />
+                <h2 className="fw-bold fs-1 mb-2 position-relative">{isEng ? 'Testimonials' : 'آراء العملاء'}</h2>
+                <p className="mx-auto mb-0 position-relative" style={{color: '#656565'}}>{isEng ? 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.' : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'}</p>
+              </div>
+            </div>
+            
+            <Location />
+
+          </div>
+        </div>
+      </section>
+
       {/* blogs-home */}
       <section className="py-5" dir={isEng ? 'ltr' : 'rtl'}>
         <div className="container">
           <div className="row gy-4 d-flex justify-content-center align-items-center">
-            <div className="col-11">
+            <div className="col-10">
               <div className="main-title text-center pt-3 mb-4 position-relative wow fadeInDownBig" data-wow-duration="1s" data-wow-delay="0.5s">
                 <img src={vectorTop} className={`vector position-absolute wow fadeIn top-0 ${isEng ? 'start-vector' : 'end-vector'} translate-middle-x`} data-wow-duration="1s" data-wow-delay="1.5s" style={{height: '100px'}} alt="vector" />
                 <h2 className="fw-bold fs-1 mb-2 position-relative">{isEng ? 'Blogs' : 'المدونــات'}</h2>
-                <p className="mx-auto mb-0 position-relative">{isEng ? 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.' : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'}</p>
+                <p className="mx-auto mb-0 position-relative" style={{color: '#656565'}}>{isEng ? 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.' : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'}</p>
               </div>
             </div>
 
-            {/* {portfolioImgs.map((port , i) => (
-              <Link key={i} to='../portfolio/1' className="col-lg-4 col-md-6 col-11">
-                <div className={`port-item rounded-4 position-relative wow ${state[i]}`} data-wow-duration="1.5s" data-wow-delay={`${del[i]}`}>
-                  <img src={port.img} className='w-100 rounded-4' alt="port" />
-                  <div className="layer-title rounded-4 position-absolute top-0 start-0 end-0 bottom-0 d-flex justify-content-center align-items-end" style={{backgroundColor: '#00000075'}}>
-                    <h4 className='text-white fw-bold mb-4'>{isEng ? port.titleEn : port.titleAr}</h4>
+            <div className="row gy-4 d-flex justify-content-center justify-content-lg-start align-items-center">
+                {blogsImgs.map((blog , i) => (
+                  <div key={i} className="col-lg-3 col-md-6 col-11">
+                    <div className={`blog-item shadow pb-3 wow`} data-wow-duration="1.5s" data-wow-delay={``}>
+                      <img src={blog.img} className='w-100 mb-2' alt="blog" />
+                      <h4 className={`${isEng ? 'ms-2' : 'me-2'} mb-2`} style={{fontWeight: '600'}}>{isEng ? 'Blog Title....' : 'عنوان المدونة..'}</h4>
+                      <div className={`date d-flex justify-content-between align-items-center mx-2`}>
+                        <h6 className='mb-0' style={{color: '#656565'}}>{isEng ? '2 Nov 2022' : '2 نوفمبر 2020'}</h6>
+                        <Link to='../blogs/1' className={`main-color`} style={{fontWeight: '600' , fontSize: '14px'}}>{isEng ? <>Learn More <BsArrowRight className='main-color ms-1'/> </> : <>تعلـم المزيـد <BsArrowLeft className='main-color me-1' /></>}</Link>
+                      </div>
+                    </div>
                   </div>
-                  <div className="layer-caption rounded-4 position-absolute d-flex justify-content-center align-items-center" style={{backgroundColor: '#00000095'}}>
-                    <p className='text-white mb-4 p-3'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic soluta quibusdam, neque maxime fuga dolorum fugit, sapiente enim harum perferendis aspernatur esse molestias veritatis! Dolorum voluptatum error omnis, deserunt minus sit in harum veritatis atque tempore iure expedita sint molestiae.</p>
-                  </div>
-                </div>
-              </Link>
-            ))} */}
+                ))}
+            </div>
 
-              <div className="col-lg-3 col-md-6 col-11">
-                <div className={`blog-item wow`} data-wow-duration="1.5s" data-wow-delay={``}>
-                  <img src={blog1} className='w-100' alt="blog" />
-
-                  {/* <div className="layer-title rounded-4 position-absolute top-0 start-0 end-0 bottom-0 d-flex justify-content-center align-items-end" style={{backgroundColor: '#00000075'}}>
-                    <h4 className='text-white fw-bold mb-4'>{isEng ? 'port.titleEn' : 'port.titleAr'}</h4>
-                  </div> */}
-                  {/* <div className="layer-caption rounded-4 position-absolute d-flex justify-content-center align-items-center" style={{backgroundColor: '#00000095'}}>
-                    <p className='text-white mb-4 p-3'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic soluta quibusdam, neque maxime fuga dolorum fugit, sapiente enim harum perferendis aspernatur esse molestias veritatis! Dolorum voluptatum error omnis, deserunt minus sit in harum veritatis atque tempore iure expedita sint molestiae.</p>
-                  </div> */}
-                </div>
-              </div>
+              
             
             <div className="buttons text-center mt-5 wow fadeInUpBig">
               <Link to="../blogs" className="btn second-btn px-5" data-wow-duration="1s" data-wow-delay="0.5s">{isEng ? 'View All Blogs' : 'المزيـــد'}</Link>
@@ -438,6 +461,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
     </>
   )
 }
