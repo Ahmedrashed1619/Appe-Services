@@ -150,7 +150,7 @@ video {
     transition: all 0.25s;
     transform: translateY(-10px);
     /* box-shadow: 0 10px 0 var(--mainColor); */
-    box-shadow: 0 8px 0 var(--white) !important;
+    box-shadow: 0 10px 0 var(--white) !important;
 }
 
 .navbar.nav-total .navbar-toggler.convert::before {
@@ -193,7 +193,7 @@ video {
     /* color: var(--secondColor); */
     position: relative;
     font-weight: 500;
-    font-size: 15px;
+    /* font-size: 15px; */
     transition: all 0.25s;
     text-align: center;
     white-space: nowrap;
@@ -325,7 +325,13 @@ video {
     }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 992px) and (max-width: 1055px) {
+    .navbar.nav-total .navbar-nav li {
+        margin: auto 0;
+    }
+}
+
+@media screen and (max-width: 991.9px) {
     .navbar.nav-total .navbar-nav li {
         margin: 0.2rem 0;
     }
@@ -350,7 +356,7 @@ video {
     }
 } */
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991.9px) {
 
     .navbar.nav-total .navbar-toggler {
         display: flex;
@@ -396,7 +402,7 @@ video {
         width: 25px !important;
         height: 3px !important;
         transform: translateY(-8px);
-        box-shadow: 0 8px 0 var(--mainColor);
+        box-shadow: 0 8px 0 var(--white) !important;
     }
 
     .navbar.nav-total .navbar-toggler::after {
@@ -508,12 +514,13 @@ video {
   .navigate a {
     /* color: rgba(238, 238, 238, 0.75); */
     color: #cdcdcd;
-    font-weight:500;
+    font-weight: 500;
     transition: all 0.3s;
     margin-bottom: 10px;
     white-space: nowrap;
     /* font-size: 15px; */
   }
+
 
   .navigate a.location {
     white-space: normal;
@@ -832,6 +839,13 @@ video {
     background-size: cover;
   }
 
+
+  @media screen and (max-width: 510px) {
+    .top-wave {
+      height: 35vh;
+    }
+  }
+
   .odd-number-en {
     left: -20px;
     right: auto;
@@ -851,3 +865,41 @@ video {
     right: auto;
     left: -25px;
   }
+
+
+  /* portfolio page */
+
+  .nav-pills .nav-link.active, .nav-pills .nav-link {
+    color: var(--black);
+    font-weight: 600;
+ }
+
+  .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: var(--mainColor);
+ }
+
+
+
+     /* packages page  */
+.price{
+  box-shadow: 0px 4px 6px rgba(147, 147, 147, 0.5);
+  cursor: pointer;
+  border-radius: 10px;
+}
+.price:hover .cont-pricing{
+  border-color: var(--mainColor);
+}
+.price .name{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.cont-pricing{
+  padding-top: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  transition: all 0.25s;
+}
+

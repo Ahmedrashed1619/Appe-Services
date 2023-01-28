@@ -1,6 +1,6 @@
 import React, { useEffect , useContext, useState } from 'react';
 import imgLogo from '../../images/Home/logozari.png';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { langContext } from '../Context/store';
 import $ from 'jquery';
 
@@ -84,7 +84,7 @@ export default function Navbar() {
             path: 'packages',
             class: 'packages',
             nameEn: 'Packages',
-            nameAr: 'الحـزم'
+            nameAr: 'الباقــات'
         },
         {
             path: 'news',
@@ -104,12 +104,12 @@ export default function Navbar() {
             nameEn: 'Contact Us',
             nameAr: 'تواصل معنـا'
         },
-        {
-            path: 'jobs',
-            class: 'jobs',
-            nameEn: 'Jobs',
-            nameAr: 'الوظائـف'
-        }
+        // {
+        //     path: 'jobs',
+        //     class: 'jobs',
+        //     nameEn: 'Jobs',
+        //     nameAr: 'الوظائـف'
+        // }
     ]
 
 

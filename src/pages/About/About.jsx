@@ -1,4 +1,4 @@
-import React, { useEffect , useContext, useState } from 'react';
+import React, { useEffect , useContext } from 'react';
 // import { Link, NavLink } from 'react-router-dom';
 import { langContext } from '../../componants/Context/store';
 import imgAboutHome from '../../images/Home/About us.png';
@@ -28,9 +28,9 @@ export default function About() {
     }
   }, [])
 
-  // useEffect(() => {
-  //   $('html , body').animate({ scrollTop: 0 }, 200);
-  // }, []);
+  useEffect(() => {
+    $('html , body').animate({ scrollTop: 0 }, 200);
+  }, []);
 
   useEffect(() => {
     new WOW.WOW().init();

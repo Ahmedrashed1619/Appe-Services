@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 // import { useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { langContext } from '../../componants/Context/store';
 import imgFooter from '../../images/Home/logozari.png';
 import $ from 'jquery';
@@ -52,7 +52,7 @@ export default function Footer() {
             path: 'packages',
             class: 'packages',
             nameEn: 'Packages',
-            nameAr: 'الحـزم'
+            nameAr: 'الباقــات'
         },
     ]
 
@@ -76,12 +76,12 @@ export default function Footer() {
             nameEn: 'Contact Us',
             nameAr: 'تواصل معنـا'
         },
-        {
-            path: 'jobs',
-            class: 'jobs',
-            nameEn: 'Jobs',
-            nameAr: 'الوظائـف'
-        },
+        // {
+        //     path: 'jobs',
+        //     class: 'jobs',
+        //     nameEn: 'Jobs',
+        //     nameAr: 'الوظائـف'
+        // },
         {
             path: 'terms',
             class: 'terms',

@@ -1,5 +1,5 @@
-import React, { useEffect , useContext, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useEffect , useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { langContext } from '../../componants/Context/store';
 import imgTop from '../../images/Home/In progress-pana.png';
 import imgAboutHome from '../../images/Home/About us.png';
@@ -180,22 +180,22 @@ export default function Home() {
 
 
   let del = {
-    0: '0.3',
-    1: '0.5',
-    2: '0.7',
-    3: '0.9',
-    4: '1.1',
-    5: '1.3',
-    6: '1.5',
-    7: '1.7',
-    8: '1.9',
-    9: '2.1',
-    10: '2.3',
-    11: '2.5',
-    12: '2.7',
-    13: '2.9',
-    14: '3.1',
-    15: '3.3',
+    0: '0.4',
+    1: '0.8',
+    2: '1.2',
+    3: '1.6',
+    4: '2',
+    5: '2.4',
+    6: '2.8',
+    7: '3.2',
+    8: '3.6',
+    9: '4',
+    10: '4.4',
+    11: '4.8',
+    12: '5.2',
+    13: '5.6',
+    14: '6',
+    15: '6.4',
   };
 
   
@@ -324,11 +324,11 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="row gy-4 d-flex justify-content-center justify-content-lg-start align-items-center">
+            <div className="row gy-5 gx-lg-4 gx-0 d-flex justify-content-center justify-content-lg-start align-items-center">
                 {servicesImgs.map((service , i) => (
                   <Link key={i} to='../services/1' className="col-lg-3 col-md-6 col-11">
                     <div className={`service-item rounded-4 position-relative wow ${state[i]}`} data-wow-duration="1.5s" data-wow-delay={`${del[i]}`}>
-                      <img src={service.img} className='w-100 rounded-4' alt="service" />
+                      <img src={service.img} className='w-100 rounded-4' style={{height: '300px'}} alt="service" />
                       <div className="layer-title rounded-4 position-absolute top-0 start-0 end-0 bottom-0 d-flex justify-content-center align-items-end" style={{backgroundColor: '#00000075'}}>
                         <h4 className='text-white fw-bold mb-4'>{isEng ? service.titleEn : service.titleAr}</h4>
                       </div>
@@ -359,11 +359,11 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="row gy d-flex justify-content-center justify-content-lg-start align-items-center">
+            <div className="row gy-5 gx-lg-4 gx-0 d-flex justify-content-center justify-content-lg-start align-items-center">
                 {portfolioImgs.map((port , i) => (
                     <Link key={i} to='../portfolio/1' className="col-lg-4 col-md-6 col-11">
                       <div className={`port-item rounded-4 position-relative wow ${state[i]}`} data-wow-duration="1.5s" data-wow-delay={`${del[i]}`}>
-                        <img src={port.img} className='w-100 rounded-4' alt="port" />
+                        <img src={port.img} className='w-100 rounded-4' style={{height: '300px'}} alt="port" />
                         <div className="layer-title rounded-4 position-absolute top-0 start-0 end-0 bottom-0 d-flex justify-content-center align-items-end" style={{backgroundColor: '#00000075'}}>
                           <h4 className='text-white fw-bold mb-4'>{isEng ? port.titleEn : port.titleAr}</h4>
                         </div>
@@ -438,11 +438,11 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="row gy-4 d-flex justify-content-center justify-content-lg-start align-items-center">
+            <div className="row gy-5 gx-lg-4 gx-0 d-flex justify-content-center justify-content-lg-start align-items-center">
                 {blogsImgs.map((blog , i) => (
                   <div key={i} className="col-lg-3 col-md-6 col-11">
-                    <div className={`blog-item shadow pb-3 wow`} data-wow-duration="1.5s" data-wow-delay={``}>
-                      <img src={blog.img} className='w-100 mb-2' alt="blog" />
+                    <div className={`blog-item shadow pb-3 wow wow ${state[i]}`} data-wow-duration="1.5s" data-wow-delay={`${del[i]}`}>
+                      <img src={blog.img} className='w-100 mb-2' style={{height: '300px'}} alt="blog" />
                       <h4 className={`${isEng ? 'ms-2' : 'me-2'} mb-2`} style={{fontWeight: '600'}}>{isEng ? 'Blog Title....' : 'عنوان المدونة..'}</h4>
                       <div className={`date d-flex justify-content-between align-items-center mx-2`}>
                         <h6 className='mb-0' style={{color: '#656565'}}>{isEng ? '2 Nov 2022' : '2 نوفمبر 2020'}</h6>
@@ -453,8 +453,6 @@ export default function Home() {
                 ))}
             </div>
 
-              
-            
             <div className="buttons text-center mt-5 wow fadeInUpBig">
               <Link to="../blogs" className="btn second-btn px-5" data-wow-duration="1s" data-wow-delay="0.5s">{isEng ? 'View All Blogs' : 'المزيـــد'}</Link>
             </div>
